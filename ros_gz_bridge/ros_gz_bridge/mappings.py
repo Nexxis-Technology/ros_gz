@@ -14,7 +14,7 @@
 
 from collections import namedtuple
 
-Mapping = namedtuple('Mapping', ('ros_type', 'gz_type'))
+Mapping = namedtuple("Mapping", ("ros_type", "gz_type"))
 
 # List of known mappings
 #
@@ -24,99 +24,100 @@ Mapping = namedtuple('Mapping', ('ros_type', 'gz_type'))
 #       Mapping('ros2_message_name', 'ignition_message_name'),
 #   ],
 MAPPINGS = {
-    'builtin_interfaces': [
-        Mapping('Time', 'Time'),
+    "builtin_interfaces": [
+        Mapping("Time", "Time"),
     ],
-    'actuator_msgs': [
-        Mapping('Actuators', 'Actuators'),
+    "actuator_msgs": [
+        Mapping("Actuators", "Actuators"),
     ],
-    'geometry_msgs': [
-        Mapping('Point', 'Vector3d'),
-        Mapping('Pose', 'Pose'),
-        Mapping('PoseArray', 'Pose_V'),
-        Mapping('PoseStamped', 'Pose'),
-        Mapping('PoseWithCovariance', 'PoseWithCovariance'),
-        Mapping('Quaternion', 'Quaternion'),
-        Mapping('Transform', 'Pose'),
-        Mapping('TransformStamped', 'Pose'),
-        Mapping('Twist', 'Twist'),
-        Mapping('TwistStamped', 'Twist'),
-        Mapping('TwistWithCovariance', 'TwistWithCovariance'),
-        Mapping('TwistWithCovarianceStamped', 'TwistWithCovariance'),
-        Mapping('Wrench', 'Wrench'),
-        Mapping('WrenchStamped', 'Wrench'),
-        Mapping('Vector3', 'Vector3d'),
+    "geometry_msgs": [
+        Mapping("Point", "Vector3d"),
+        Mapping("Pose", "Pose"),
+        Mapping("PoseArray", "Pose_V"),
+        Mapping("PoseStamped", "Pose"),
+        Mapping("PoseWithCovariance", "PoseWithCovariance"),
+        Mapping("Quaternion", "Quaternion"),
+        Mapping("Transform", "Pose"),
+        Mapping("TransformStamped", "Pose"),
+        Mapping("Twist", "Twist"),
+        Mapping("TwistStamped", "Twist"),
+        Mapping("TwistWithCovariance", "TwistWithCovariance"),
+        Mapping("TwistWithCovarianceStamped", "TwistWithCovariance"),
+        Mapping("Wrench", "Wrench"),
+        Mapping("WrenchStamped", "Wrench"),
+        Mapping("Vector3", "Vector3d"),
     ],
-    'nav_msgs': [
-        Mapping('Odometry', 'Odometry'),
-        Mapping('Odometry', 'OdometryWithCovariance'),
+    "nav_msgs": [
+        Mapping("Odometry", "Odometry"),
+        Mapping("Odometry", "OdometryWithCovariance"),
     ],
-    'rcl_interfaces': [
-        Mapping('ParameterValue', 'Any'),
+    "rcl_interfaces": [
+        Mapping("ParameterValue", "Any"),
     ],
-    'ros_gz_interfaces': [
-        Mapping('Altimeter', 'Altimeter'),
-        Mapping('Contact', 'Contact'),
-        Mapping('Contacts', 'Contacts'),
-        Mapping('Entity', 'Entity'),
-        Mapping('Float32Array', 'Float_V'),
-        Mapping('GuiCamera', 'GUICamera'),
-        Mapping('JointWrench', 'JointWrench'),
-        Mapping('Light', 'Light'),
-        Mapping('ParamVec', 'Param'),
-        Mapping('ParamVec', 'Param_V'),
-        Mapping('SensorNoise', 'SensorNoise'),
-        Mapping('StringVec', 'StringMsg_V'),
-        Mapping('TrackVisual', 'TrackVisual'),
-        Mapping('VideoRecord', 'VideoRecord'),
+    "ros_gz_interfaces": [
+        Mapping("Altimeter", "Altimeter"),
+        Mapping("Contact", "Contact"),
+        Mapping("Contacts", "Contacts"),
+        Mapping("Entity", "Entity"),
+        Mapping("Float32Array", "Float_V"),
+        Mapping("GuiCamera", "GUICamera"),
+        Mapping("JointWrench", "JointWrench"),
+        Mapping("Light", "Light"),
+        Mapping("ParamVec", "Param"),
+        Mapping("ParamVec", "Param_V"),
+        Mapping("SensorNoise", "SensorNoise"),
+        Mapping("StringVec", "StringMsg_V"),
+        Mapping("TrackVisual", "TrackVisual"),
+        Mapping("VideoRecord", "VideoRecord"),
+        Mapping("EntityWrench", "EntityWrench"),
     ],
-    'rosgraph_msgs': [
-        Mapping('Clock', 'Clock'),
+    "rosgraph_msgs": [
+        Mapping("Clock", "Clock"),
     ],
-    'sensor_msgs': [
-        Mapping('BatteryState', 'BatteryState'),
-        Mapping('CameraInfo', 'CameraInfo'),
-        Mapping('FluidPressure', 'FluidPressure'),
-        Mapping('Image', 'Image'),
-        Mapping('Imu', 'IMU'),
-        Mapping('JointState', 'Model'),
-        Mapping('Joy', 'Joy'),
-        Mapping('LaserScan', 'LaserScan'),
-        Mapping('MagneticField', 'Magnetometer'),
-        Mapping('NavSatFix', 'NavSat'),
-        Mapping('PointCloud2', 'PointCloudPacked'),
+    "sensor_msgs": [
+        Mapping("BatteryState", "BatteryState"),
+        Mapping("CameraInfo", "CameraInfo"),
+        Mapping("FluidPressure", "FluidPressure"),
+        Mapping("Image", "Image"),
+        Mapping("Imu", "IMU"),
+        Mapping("JointState", "Model"),
+        Mapping("Joy", "Joy"),
+        Mapping("LaserScan", "LaserScan"),
+        Mapping("MagneticField", "Magnetometer"),
+        Mapping("NavSatFix", "NavSat"),
+        Mapping("PointCloud2", "PointCloudPacked"),
     ],
-    'std_msgs': [
-        Mapping('Bool', 'Boolean'),
-        Mapping('ColorRGBA', 'Color'),
-        Mapping('Empty', 'Empty'),
-        Mapping('Float32', 'Float'),
-        Mapping('Float64', 'Double'),
-        Mapping('Header', 'Header'),
-        Mapping('Int32', 'Int32'),
-        Mapping('UInt32', 'UInt32'),
-        Mapping('String', 'StringMsg'),
+    "std_msgs": [
+        Mapping("Bool", "Boolean"),
+        Mapping("ColorRGBA", "Color"),
+        Mapping("Empty", "Empty"),
+        Mapping("Float32", "Float"),
+        Mapping("Float64", "Double"),
+        Mapping("Header", "Header"),
+        Mapping("Int32", "Int32"),
+        Mapping("UInt32", "UInt32"),
+        Mapping("String", "StringMsg"),
     ],
-    'tf2_msgs': [
-        Mapping('TFMessage', 'Pose_V'),
+    "tf2_msgs": [
+        Mapping("TFMessage", "Pose_V"),
     ],
-    'trajectory_msgs': [
-        Mapping('JointTrajectory', 'JointTrajectory'),
+    "trajectory_msgs": [
+        Mapping("JointTrajectory", "JointTrajectory"),
     ],
-    'vision_msgs': [
-        Mapping('Detection2DArray', 'AnnotatedAxisAligned2DBox_V'),
-        Mapping('Detection2D', 'AnnotatedAxisAligned2DBox'),
+    "vision_msgs": [
+        Mapping("Detection2DArray", "AnnotatedAxisAligned2DBox_V"),
+        Mapping("Detection2D", "AnnotatedAxisAligned2DBox"),
     ],
 }
 
 MAPPINGS_8_4_0 = {
-    'ros_gz_interfaces': [
-        Mapping('Dataframe', 'Dataframe'),
+    "ros_gz_interfaces": [
+        Mapping("Dataframe", "Dataframe"),
     ],
 }
 
 MAPPINGS_10_1_0 = {
-    'ros_gz_interfaces': [
-        Mapping('MaterialColor', 'MaterialColor'),
+    "ros_gz_interfaces": [
+        Mapping("MaterialColor", "MaterialColor"),
     ],
 }

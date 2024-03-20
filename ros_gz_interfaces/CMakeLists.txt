@@ -35,6 +35,7 @@ set(msg_files
   "msg/VideoRecord.msg"
   "msg/WorldControl.msg"
   "msg/WorldReset.msg"
+  "msg/EntityWrench.msg"
 )
 
 set(srv_files

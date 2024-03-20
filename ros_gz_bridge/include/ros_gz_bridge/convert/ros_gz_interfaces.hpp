@@ -31,6 +31,7 @@
 #include <gz/msgs/track_visual.pb.h>
 #include <gz/msgs/video_record.pb.h>
 #include <gz/msgs/world_control.pb.h>
+#include <gz/msgs/entity_wrench.pb.h>
 
 // ROS 2 messages
 #include <ros_gz_interfaces/msg/altimeter.hpp>
@@ -47,6 +48,7 @@
 #include <ros_gz_interfaces/msg/track_visual.hpp>
 #include <ros_gz_interfaces/msg/video_record.hpp>
 #include <ros_gz_interfaces/msg/world_control.hpp>
+#include <ros_gz_interfaces/msg/entity_wrench.hpp>
 
 // Required for HAVE_DATAFRAME definition
 #include <ros_gz_bridge/ros_gz_bridge.hpp>
@@ -72,11 +74,26 @@ convert_ros_to_gz(
   const ros_gz_interfaces::msg::JointWrench & ros_msg,
   gz::msgs::JointWrench & gz_msg);
 
+
 template<>
 void
 convert_gz_to_ros(
   const gz::msgs::JointWrench & gz_msg,
   ros_gz_interfaces::msg::JointWrench & ros_msg);
+
+template<>
+void
+convert_ros_to_gz(
+  const ros_gz_interfaces::msg::EntityWrench & ros_msg,
+  gz::msgs::EntityWrench & gz_msg);
+
+
+template<>
+void
+convert_gz_to_ros(
+  const gz::msgs::EntityWrench & gz_msg,
+  ros_gz_interfaces::msg::EntityWrench & ros_msg);
+
 
 template<>
 void

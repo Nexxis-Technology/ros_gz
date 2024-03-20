@@ -1,0 +1,3 @@
+std_msgs/Header header                  # may not be in gz message... 
+ros_gz_interfaces/Entity entity
+geometry_msgs/Wrench wrench

@@ -32,6 +32,7 @@ convert_ros_to_gz(
   convert_ros_to_gz(ros_msg.body_2_wrench, (*gz_msg.mutable_body_2_wrench()));
 }
 
+
 template<>
 void
 convert_gz_to_ros(
@@ -45,6 +46,29 @@ convert_gz_to_ros(
   ros_msg.body_2_id.data = gz_msg.body_2_id();
   convert_gz_to_ros(gz_msg.body_1_wrench(), ros_msg.body_1_wrench);
   convert_gz_to_ros(gz_msg.body_2_wrench(), ros_msg.body_2_wrench);
+}
+
+
+template<>
+void
+convert_ros_to_gz(
+  const ros_gz_interfaces::msg::EntityWrench & ros_msg,
+  gz::msgs::EntityWrench & gz_msg)
+{
+  convert_ros_to_gz(ros_msg.header, (*gz_msg.mutable_header()));
+  convert_ros_to_gz(ros_msg.entity, (*gz_msg.mutable_entity()));
+  convert_ros_to_gz(ros_msg.wrench, (*gz_msg.mutable_wrench()));
+}
+
+template<>
+void
+convert_gz_to_ros(
+  const gz::msgs::EntityWrench & gz_msg,
+  ros_gz_interfaces::msg::EntityWrench & ros_msg)
+{
+  convert_gz_to_ros(gz_msg.header(), ros_msg.header);
+  convert_gz_to_ros(gz_msg.entity(), ros_msg.entity);
+  convert_gz_to_ros(gz_msg.wrench(), ros_msg.wrench);
 }
 
 template<>

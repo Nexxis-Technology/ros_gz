@@ -508,6 +508,32 @@ void compareTestMsg(const std::shared_ptr<gz::msgs::JointWrench> & _msg)
   compareTestMsg(std::make_shared<gz::msgs::Wrench>(_msg->body_2_wrench()));
 }
 
+
+void createTestMsg(gz::msgs::EntityWrench & _msg)
+{
+  gz::msgs::Header header_msg;
+  gz::msgs::Wrench wrench;
+  gz::msgs::Entity entity;
+
+  createTestMsg(header_msg);
+  createTestMsg(wrench);
+  createTestMsg(entity);
+
+  _msg.mutable_header()->CopyFrom(header_msg);
+  
+  _msg.mutable_entity()->CopyFrom(entity);
+  _msg.mutable_wrench()->CopyFrom(wrench);
+}
+
+void compareTestMsg(const std::shared_ptr<gz::msgs::EntityWrench> & _msg)
+{
+  gz::msgs::EntityWrench expected_msg;
+  createTestMsg(expected_msg);
+  compareTestMsg(std::make_shared<gz::msgs::Header>(_msg->header()));
+  compareTestMsg(std::make_shared<gz::msgs::Wrench>(_msg->wrench()));
+}
+
+
 void createTestMsg(gz::msgs::Entity & _msg)
 {
   _msg.set_id(1);
